@@ -1,0 +1,3 @@
+.user-list:first-child .user-view .user-view-list{
+	border-top: 2px solid red;
+}

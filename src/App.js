@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Signup from "./components/Signup/Signup";
+import UserList from "./components/UserList/UserList";
+import Users from "./seed/UsersSeed";
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+    constructor(props){
+        super(props)
+        this.state = { displayForm: "block", displayUserList: "none" }
+        localStorage.setItem("usersList", JSON.stringify(Users));
+    }
+
+    hideFormShowUserList(){
+        this.setState({
+            displayForm: "none",
+            displayUserList: "block"
+        })
+    }
+
+    onFormSubmit(){
+        this.hideFormShowUserList();
+    }
+
+    componentDidMount(){
+        this.hideFormShowUserList();
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Signup display={this.state.displayForm} onFormSubmit={this.onFormSubmit.bind(this)} />
+                <UserList display={this.state.displayUserList} />
+            </div>
+        );
+    }
 }
 
 export default App;

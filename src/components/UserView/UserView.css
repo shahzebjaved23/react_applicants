@@ -1,0 +1,14 @@
+.user-view{
+	background-color: #fff;
+	border-top: 1px solid grey;
+}
+
+.userRow{
+	height: 72px
+}
+
+.user-row-elem{
+	 display: flex;
+  align-items: center;
+  justify-content: center;
+}
