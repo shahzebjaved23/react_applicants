@@ -80,7 +80,6 @@ class UserView extends Component{
 		this.setState({
 			displaySelf: "none"
 		})
-		this.props.onUserDelete()
 	}
 
 	handleDeleteUser(){
