@@ -62,7 +62,7 @@ class UserList extends Component {
 					</div>
 					<div className="container user-list">
 						{this.state.usersList.map((user)=>{
-							return <UserView key={user.id} user={user} />
+							return <UserView resetUsersList={this.resetUsersList.bind(this)} key={user.id} user={user} />
 						})}	
 					</div>
 				</div>

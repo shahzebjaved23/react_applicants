@@ -13,15 +13,25 @@ class UserSearchHeader extends Component{
 		var usersList = JSON.parse(localStorage.getItem("usersList"))
 		var newUsersList = [];
 		usersList.forEach((user)=>{
-			if(this.refs.name.value != "" && StringSimilarity.compareTwoStrings(user.name, this.refs.name.value) > 0.5){
-				newUsersList.push(user)
+			if(this.refs.name.value != ""){
+				console.log(this.refs.name.value)
+				if(StringSimilarity.compareTwoStrings(user.name, this.refs.name.value) > 0.2){
+					newUsersList.push(user)
+				}
 			}
 			
-			if(this.refs.email.value != "" && StringSimilarity.compareTwoStrings(user.email, this.refs.email.value) > 0.5){
-				newUsersList.push(user)
+			if(this.refs.email.value != ""){ 
+				console.log(this.refs.email.value)
+				if(StringSimilarity.compareTwoStrings(user.email, this.refs.email.value) > 0.2){
+					newUsersList.push(user)
+				}
 			}
-			if(this.refs.phone_number.value != "" && StringSimilarity.compareTwoStrings(user.phone_number, this.refs.phone_number.value) > 0.5){
-				newUsersList.push(user)
+
+			if(this.refs.phone_number.value != ""){ 
+				console.log(this.refs.name.value)
+				if(StringSimilarity.compareTwoStrings(user.phone_number, this.refs.phone_number.value) > 0.2){
+					newUsersList.push(user)
+				}
 			}
 		})
 

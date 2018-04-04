@@ -35,18 +35,19 @@ class UserView extends Component{
 
 	updateUser(){
 		let usersList = JSON.parse(localStorage.getItem("usersList"));
-		let user = usersList.filter( user => user.id == this.state.user.id )
+		let user = usersList.filter( user => user.id == this.state.user.id )[0]
 		user.name = this.refs.name.value;
 		user.phone_number = this.refs.phone_number.value;
 		user.email = this.refs.email.value;
-		usersList = usersList.map((u)=>{
+		let newUsersList = []
+		usersList.map((u)=>{
 			if(u.id == this.state.user.id){
-				return user;
+				newUsersList.push(user)
 			}else{
-				return u;
+				newUsersList.push(u);
 			}
 		})
-		localStorage.setItem("usersList",JSON.stringify(usersList))
+		localStorage.setItem("usersList",JSON.stringify(newUsersList))
 		this.setState({
 			user: {
 				id: this.state.user.id,
@@ -55,6 +56,7 @@ class UserView extends Component{
 				phone_number: this.refs.phone_number.value 
 			}
 		})
+		this.props.resetUsersList()
 	}
 
 	handleEditUser(){
@@ -80,6 +82,7 @@ class UserView extends Component{
 		this.setState({
 			displaySelf: "none"
 		})
+		this.props.resetUsersList()
 	}
 
 	handleDeleteUser(){
