@@ -42,25 +42,35 @@ class UserList extends Component {
 		}else{
 			return (
 				<div>
-					<h1 style={{textAlign: "center"}}>Applicants List</h1>
-					<div>
+					<div className="heading-div" >
+						<h1 className="heading" ><b>Nord Software</b></h1>	
+					</div>
+
+					<div className="applicants-heading-div">
+						<h1 className="applicants-heading"><b>List Of Applicants</b></h1>
+					</div>
+					
+					<div className="user-search-div">
 						<UserSearchHeader resetUsersList={this.resetUsersList.bind(this)}></UserSearchHeader>
-						<div className="row">
+					</div>
+
+					<div className="user-header-row">	
+						<div className="row user-header-row-div">
 							<div className="col-md-1"></div>
 							<div className="col-md-2">
-								<button onClick={this.sortByName.bind(this)}>Name</button>
+								<a onClick={this.sortByName.bind(this)}>Name</a>
 							</div>
 							<div className="col-md-2">
-								<button onClick={this.sortByEmail.bind(this)}>Email</button>
+								<a onClick={this.sortByEmail.bind(this)}>Email</a>
 							</div>
 							<div className="col-md-2">
-								<button onClick={this.sortByPhoneNumber.bind(this)}>Phone Number</button>
+								<a onClick={this.sortByPhoneNumber.bind(this)}>Phone Number</a>
 							</div>
 							<div className="col-md-2"></div>
 							<div className="col-md-2"></div>
 						</div>
 					</div>
-					<div className="container user-list">
+					<div className="user-list">
 						{this.state.usersList.map((user)=>{
 							return <UserView resetUsersList={this.resetUsersList.bind(this)} key={user.id} user={user} />
 						})}	

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as StringSimilarity from 'string-similarity';
+import "./UserSearchHeader.css";
 
 class UserSearchHeader extends Component{
 
@@ -98,22 +99,22 @@ class UserSearchHeader extends Component{
 
 	render(){
 		return(
-			<div>
+			<div className="user-search-header-div">
 				<form onSubmit={this.handleSubmit.bind(this)}>
 					<div className="row">
 						<div className="col-md-1"></div>
-						<div className="col-md-2">
-							<input ref="name" placeholder={this.state.namePlaceholder} />
+						<div className="col-md-2 user-search-input-div">
+							<input className="user-search-input" ref="name" placeholder={this.state.namePlaceholder} />
 						</div>
-						<div className="col-md-2">
-							<input ref="email" placeholder={this.state.emailPlaceHolder} />
+						<div className="col-md-2 user-search-input-div">
+							<input className="user-search-input" ref="email" placeholder={this.state.emailPlaceHolder} />
 						</div>
-						<div className="col-md-2">
-							<input ref="phone_number" placeholder={this.state.phonePlaceHolder} />
+						<div className="col-md-2 user-search-input-div">
+							<input className="user-search-input" ref="phone_number" placeholder={this.state.phonePlaceHolder} />
 						</div>
 						<div className="col-md-2"></div>
 						<div className="col-md-2">
-							<button type="button" onClick={this.handleAddNew.bind(this)}>{this.state.saveButtonText}</button>
+							<button className="user-save-button" type="button" onClick={this.handleAddNew.bind(this)}>{this.state.saveButtonText}</button>
 						</div>
 					</div>
 					<input type="submit" style={{ display: "none" }} />

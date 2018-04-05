@@ -1,3 +1,54 @@
+.user-list{
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
 .user-list:first-child .user-view .user-view-list{
 	border-top: 2px solid red;
+}
+
+.heading-div{
+	background-color: #abb4bc; 
+	height: 96px;
+	margin-bottom: 50px
+}
+
+.heading{
+	padding: 32px;
+	color: white;
+	font-size: 28px;
+	text-align: left;
+}
+
+.applicants-heading-div{
+	color:#757575;
+	margin-bottom: 15px;
+}
+
+.applicants-heading{
+	text-align: left;
+	font-size: 28px;
+	padding-left: 32px;
+	font-weight: 5px;
+}
+
+.user-search-div{
+	padding: 32px 32px 10px 32px;
+}
+
+.user-header-row{
+	
+	margin-left: 46px;
+	margin-right: 46px;
+	height: 48px;
+	
+}
+
+.user-header-row-div{
+	background-color: white;
+	height: 48px;
+	padding-top: 10px;
+	cursor: pointer;
+
+	
 }

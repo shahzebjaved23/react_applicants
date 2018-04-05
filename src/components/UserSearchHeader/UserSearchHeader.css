@@ -1,0 +1,25 @@
+.user-search-header-div{
+	background-color: white;
+	padding-left: 32px;
+	padding-right: 32px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.user-search-input-div{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.user-search-input{
+	height: 40px;
+	width: 180px;
+}
+
+.user-save-button{
+	height: 40px;
+    background-color: #ededed;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
