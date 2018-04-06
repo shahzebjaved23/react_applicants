@@ -56,7 +56,7 @@ class UserList extends Component {
 
 					<div className="user-header-row">	
 						<div className="row user-header-row-div">
-							<div className="col-md-1"></div>
+							<div className="col-md-1">Id</div>
 							<div className="col-md-2">
 								<a onClick={this.sortByName.bind(this)}>Name</a>
 							</div>

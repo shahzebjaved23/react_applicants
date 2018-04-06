@@ -23,9 +23,9 @@ class App extends Component {
         this.hideFormShowUserList();
     }
 
-    componentDidMount(){
-        this.hideFormShowUserList();
-    }
+    // componentDidMount(){
+    //     this.hideFormShowUserList();
+    // }
 
     render() {
         return (
