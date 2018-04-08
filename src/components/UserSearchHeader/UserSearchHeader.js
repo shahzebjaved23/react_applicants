@@ -90,12 +90,23 @@ class UserSearchHeader extends Component{
 	handleAddNew(){
 		if(this.state.saveButtonText == "Add New"){
 			this.setAddState()
+			$(this.refs.cancel_button).css("display","block")
 		}
 
 		if(this.state.saveButtonText == "Save"){
 			this.addUser()
 		}
 		
+	}
+
+	cancelAddUser(){
+		this.refs.name.value = "";
+		this.refs.email.value = "";
+		this.refs.phone_number.value = "";
+		$(this.refs.cancel_button).css("display","none");
+		this.setState({
+			saveButtonText: "Add New"
+		})
 	}
 
 
@@ -120,7 +131,9 @@ class UserSearchHeader extends Component{
 						<div className="col-md-2 user-search-input-div">
 							<input className="user-search-input" ref="phone_number" placeholder={this.state.phonePlaceHolder} />
 						</div>
-						<div className="col-md-2"></div>
+						<div className="col-md-2">
+							<button className="user-save-button" style={{display: "none", margin: "auto"}} ref="cancel_button" type="button" onClick={this.cancelAddUser.bind(this)}>Cancel</button>
+						</div>
 						<div className="col-md-2">
 							<button className="user-save-button" type="button" onClick={this.handleAddNew.bind(this)}>{this.state.saveButtonText}</button>
 						</div>
