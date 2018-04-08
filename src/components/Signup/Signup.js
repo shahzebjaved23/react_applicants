@@ -14,6 +14,7 @@ class Signup extends Component{
 		let newUserId = usersList[usersList.length-1].id + 1;
 		usersList.push({id: newUserId, name: this.refs.name.value, email: this.refs.email.value, phone_number: this.refs.phone_number.value, password: this.refs.password.value})
 		localStorage.setItem("usersList", JSON.stringify(usersList));
+		localStorage.setItem("signedin", "true");
 		this.props.onFormSubmit()
 	}
 

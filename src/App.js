@@ -8,7 +8,7 @@ class App extends Component {
 
     constructor(props){
         super(props)
-        this.state = { displayForm: "block", displayUserList: "none" }
+        this.state = { displayForm: "block", displayUserList: "none", signedin: localStorage.getItem("signedin")}
         localStorage.setItem("usersList", JSON.stringify(Users));
     }
 
@@ -23,9 +23,11 @@ class App extends Component {
         this.hideFormShowUserList();
     }
 
-    // componentDidMount(){
-    //     this.hideFormShowUserList();
-    // }
+    componentDidMount(){
+        if(this.state.signedin == "true"){
+            this.hideFormShowUserList();    
+        }
+    }
 
     render() {
         return (

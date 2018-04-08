@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as StringSimilarity from 'string-similarity';
 import "./UserSearchHeader.css";
+import * as $ from "jquery";
 
 class UserSearchHeader extends Component{
 
@@ -95,6 +96,13 @@ class UserSearchHeader extends Component{
 			this.addUser()
 		}
 		
+	}
+
+
+	componentDidMount(){
+		$(this.refs.phone_number).on("input",()=>{
+			$(this.refs.phone_number).val($(this.refs.phone_number).val().replace(/[A-z]/g,""))
+		})
 	}
 
 	render(){
